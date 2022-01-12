@@ -33,4 +33,17 @@ public class Run {
             throw new IllegalArgumentException("Can't read file!", ioe);
         }
     }
+
+    public void readAllLines(String fileName) {
+        try(BufferedReader br = Files.newBufferedReader(Path.of(fileName))) {
+            String line;
+            br.readLine(); //A file fejléce miatt, előolvasás
+            while ((line = br.readLine()) != null) {
+                //Run run = filebeolvasás; LocalDate.parse metódus kell még
+            }
+
+        } catch (IOException ioe) {
+            throw new IllegalStateException("Can't read file");
+        }
+    }
 }
