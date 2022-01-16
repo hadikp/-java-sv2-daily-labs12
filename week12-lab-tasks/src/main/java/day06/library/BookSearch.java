@@ -17,10 +17,9 @@ public class BookSearch {
         isBlankString(title);
         Collections.sort(books);
         int index = Collections.binarySearch(books, new Book(author, title));
-
-        /*if (result == null) {
+        if (index < 0) {
             throw new IllegalArgumentException("Nem található a keresett könyv!");
-        }*/
+        }
         return books.get(index);
     }
 

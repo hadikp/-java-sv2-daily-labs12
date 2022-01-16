@@ -43,4 +43,10 @@ class BookSearchTest {
         assertEquals("Robotok", expected.getTitle());
     }
 
+    @Test
+    void testEmptySearch() {
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> bookSearch.findBookByAuthorTitle("as", "Robotok"));
+        assertEquals("Nem található a keresett könyv!", iae.getMessage());
+    }
+
 }
